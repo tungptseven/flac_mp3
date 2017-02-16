@@ -30,9 +30,7 @@ class Converter {
   flacToMp3(inputFile) {
     return new Promise((resolve, reject) => {
 
-
       let outputFile = getOutputFile(inputFile);
-
 
       const converter = spawn('ffmpeg', ['-y', '-i', inputFile, '-ab', '320k', '-map_metadata', '0', '-id3v2_version', '3', outputFile]);
 
